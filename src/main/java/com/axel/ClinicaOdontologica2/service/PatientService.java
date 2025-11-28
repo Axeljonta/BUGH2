@@ -30,11 +30,18 @@ public class PatientService {
         repository.save(patient);
     }
 
-    public void delete(Patient patient){
-        repository.delete(patient);
-    }
+    public void delete(Integer patient){repository.deleteById(patient);}
 
     public List<Patient> findAll(){
         return repository.findAll();
     }
+
+    public Optional<Patient> findByLastName(String lastName){
+        return repository.findByLastName(lastName);
+    }
+
+
+
+
 }
+
